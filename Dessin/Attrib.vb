@@ -17,7 +17,7 @@
         Try
             Dim stringed_order, stringed_soum As String
             If Strings.Len(ContratToolStripTextBox.Text) > 4 Then stringed_order = ContratToolStripTextBox.Text & "%"
-            If Strings.Len(SoumissionToolStripTextBox.Text) > 4 Then stringed_soum = SoumissionToolStripTextBox.Text & "%"
+            If Strings.Len(SoumissionToolStripTextBox.Text) > 4 Then stringed_soum = SoumissionToolStripTextBox.Text ' 2022-03-29 pour les soum NAI & "%"
             Me.TasksTableAdapter.Fillbycontratsoum(Me.NorbecDataDataSet.Tasks, stringed_order, stringed_soum)
             Me.Tasks_Jobs_approTableAdapter.FillBycontratsoum(Me.NorbecDataDataSet.Tasks_Jobs_appro, stringed_order, stringed_soum)
             Me.Tasks_Jobs_prodTableAdapter.FillBycontratsoum(Me.NorbecDataDataSet.Tasks_Jobs_prod, stringed_order, stringed_soum)
@@ -87,7 +87,7 @@
 
             Dim stringed_order, stringed_soum As String
             If Strings.Len(ContratToolStripTextBox.Text) > 4 Then stringed_order = ContratToolStripTextBox.Text & "%"
-            If Strings.Len(SoumissionToolStripTextBox.Text) > 4 Then stringed_soum = SoumissionToolStripTextBox.Text & "%"
+            If Strings.Len(SoumissionToolStripTextBox.Text) > 4 Then stringed_soum = SoumissionToolStripTextBox.Text  ' 2022-04-13 pour les soum NAI & "%"
             Me.Check_tasks_jobsTableAdapter.Fill(Me.NorbecDataDataSet.check_tasks_jobs, type, stringed_order, stringed_soum)
             Dim sSQL As String = ""
             For Each found_tasks As DataRow In Me.NorbecDataDataSet.check_tasks_jobs.Rows
@@ -150,7 +150,7 @@
     Sub refresh_all()
         Dim stringed_order, stringed_soum As String
         If Strings.Len(ContratToolStripTextBox.Text) > 4 Then stringed_order = ContratToolStripTextBox.Text & "%"
-        If Strings.Len(SoumissionToolStripTextBox.Text) > 4 Then stringed_soum = SoumissionToolStripTextBox.Text & "%"
+        If Strings.Len(SoumissionToolStripTextBox.Text) > 4 Then stringed_soum = SoumissionToolStripTextBox.Text ' 2022-04-13 pour les soum NAI & "%"
 
         Me.ProdTableAdapter.Fill(Me.NorbecDataDataSet1.Prod)
         Me.ApproTableAdapter.Fill(Me.NorbecDataDataSet1.Appro)
